@@ -350,7 +350,7 @@ $font-family-base: Montserrat;
   // }
 }
 @mixin floatItemsBG{
-  border: 3px solid green;
+  // border: 3px solid green;
   // bottom: -50px;
   border-radius: 30px;
   padding: 20px;
@@ -359,7 +359,7 @@ $font-family-base: Montserrat;
 .floatBox {
   display: flex;
   align-items: center;
-  position: fixed;
+  position: fixed !important;
   background: rgba(255, 178, 14, 0.55);
   bottom: 10px;
   left: 9.5%;
@@ -384,7 +384,7 @@ $font-family-base: Montserrat;
 }
 .floatImage{
   @include floatItemsBG();
-  position: relative;
+  position: relative !important;
   // background: rgb(255, 197, 0, 0.1);
   // margin-top: -50px;
   bottom: 25px;
@@ -401,4 +401,24 @@ $font-family-base: Montserrat;
   border-radius: 50px;
   background: #be2d30;
   padding: 10px;
+}
+
+.videoPlayer{
+  // background-color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 3rem;
+  // border: #be2d30 2px solid;
+}
+
+.title{
+  font-weight: 700;
+  font-family: Montserrat;
+  font-size: 42px;
+  text-align: center;
+  text-decoration: underline !important ; 
+  text-decoration-color: #be2d30;
+  margin-bottom: 25px;
 }

@@ -224,12 +224,29 @@ export default function Home() {
         </div>
 
         <div>Testimonials</div>
-        <div>youtubeVideo </div>
-        <ReactPlayer url='https://www.youtube.com/watch?v=o-s9E53Apq8'/>
-        <div>How it Works</div>
-        <div>In the news</div>
-        <div>Our Categories</div>
-        <div>Footer</div>
+        <div> 
+          <section className={styles.title}>How to Order ? </section>
+          <div className={styles.videoPlayer}>
+            <ReactPlayer url='https://www.youtube.com/watch?v=o-s9E53Apq8'/>
+          </div>
+        </div>
+
+        <div>
+          <section className={styles.title}>How it Works</section>
+        </div>
+
+        <div>
+          <section className={styles.title}>CaterNinja in the News</section>          
+        </div>
+
+        <div>
+        <section className={styles.title}>Our Categories</section>
+        </div>
+
+        <div>
+          Footer
+        </div>
+
       </main>
     </>
   );
