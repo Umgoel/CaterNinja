@@ -3,7 +3,7 @@ import Card from "./Card";
 const MySlider = () => {
   return (
     <div>
-      <Card img="/caterninja.webp"/>
+      <Card img="/chatbot.jpeg" />
     </div>
   )
 }
