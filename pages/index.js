@@ -102,18 +102,19 @@ export default function Home() {
               {/* img 2, 4 links*/}
               <Carousel
                 showThumbs={false}
-                autoPlay
-                infiniteLoop
-                interval={2500}
+                autoPlay={true}
+                infiniteLoop={true}
+                interval={2500} 
                 centerMode={true}
                 showArrows={false}
                 showStatus={false}
+                axis="horizontal"
               >
                 {/* infiniteLoop interval={2500} centerMode={true} showArrows={false} showStatus={false} */}
                 <div className={styles.carousel}>
                   <Image
                     src={
-                      "https://new.caterninja.com/_next/image?url=%2Fhome%2Fheader%2Fgroup.webp&w=1080&q=75"
+                      "/group1.jpeg"
                     }
                     alt="CaterNinja.com Logo"
                     width={200}
@@ -125,7 +126,7 @@ export default function Home() {
                 <div className={styles.carousel}>
                   <Image
                     src={
-                      "https://new.caterninja.com/_next/image?url=%2Fhome%2Fheader%2Fgroup3.webp&w=1080&q=75"
+                      "/group3.jpeg"
                     }
                     alt="CaterNinja.com Logo"
                     width={200}
@@ -137,7 +138,7 @@ export default function Home() {
                 <div className={styles.carousel}>
                   <Image
                     src={
-                      "https://new.caterninja.com/_next/image?url=%2Fhome%2Fheader%2Fgroup.webp&w=1080&q=75"
+                      "/group1.jpeg"
                     }
                     alt="CaterNinja.com Logo"
                     width={200}
@@ -149,7 +150,7 @@ export default function Home() {
                 <div className={styles.carousel}>
                   <Image
                     src={
-                      "https://new.caterninja.com/_next/image?url=%2Fhome%2Fheader%2Fgroup3.webp&w=1080&q=75"
+                      "/group3.jpeg"
                     }
                     alt="CaterNinja.com Logo"
                     width={200}
