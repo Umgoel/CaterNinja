@@ -229,13 +229,15 @@ $font-family-base: Montserrat;
     transform: rotate(0deg);
   }
 }
+
+
 @mixin redSpan{
   color: #be2d30;
 }
 .mainnav {
   filter: drop-shadow(0 4.63171px 9.26343px rgba(0, 0, 0, 0.25));
-  border: #be2d30;
-  border-width: 5px;
+  // border: #be2d30;
+  // border-width: 5px;
   display: flex;
   ul {
     padding: 1rem;
@@ -254,25 +256,25 @@ $font-family-base: Montserrat;
   }
 }
 .navcont {
-  border: #be2d30;
-  border-width: 5px;
-  border-style: solid;
+  // border: #be2d30;
+  // border-width: 5px;
+  // border-style: solid;
   display: flex;
   // justify-content: right;
 }
-.navimg {
+// .navimg {
   // padding: ;
-  border: #be2d30;
-  border-width: 5px;
-  border-style: solid;
-}
+  // border: #be2d30;
+  // border-width: 5px;
+  // border-style: solid;
+// }
 .socials {
   display: flex;
   justify-content: right;
   padding-left: 20%;
 }
 .containerHeader {
-  border: 3px solid #fff;
+  // border: 3px solid #fff;
   padding: 20px;
 }
 .carousel {
@@ -305,7 +307,7 @@ $font-family-base: Montserrat;
 .headerright {
   float: right;
   display: inline-flex;
-  border: 3px solid green;
+  // border: 3px solid green;
   width: 30%;
   text-align: center;
   align-items: center;
@@ -313,7 +315,7 @@ $font-family-base: Montserrat;
     margin: auto;
     text-align: center;
     align-items: center;
-    border: 3px solid yellow;
+    // border: 3px solid yellow;
     // margin: -15px auto 20px;
   }
   p {

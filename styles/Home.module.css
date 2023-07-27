@@ -206,8 +206,6 @@
 }
 .mainnav {
   filter: drop-shadow(0 4.63171px 9.26343px rgba(0, 0, 0, 0.25));
-  border: #be2d30;
-  border-width: 5px;
   display: flex;
 }
 .mainnav ul {
@@ -227,16 +225,7 @@
 }
 
 .navcont {
-  border: #be2d30;
-  border-width: 5px;
-  border-style: solid;
   display: flex;
-}
-
-.navimg {
-  border: #be2d30;
-  border-width: 5px;
-  border-style: solid;
 }
 
 .socials {
@@ -246,7 +235,6 @@
 }
 
 .containerHeader {
-  border: 3px solid #fff;
   padding: 20px;
 }
 
@@ -276,7 +264,6 @@
 .headerright {
   float: right;
   display: inline-flex;
-  border: 3px solid green;
   width: 30%;
   text-align: center;
   align-items: center;
@@ -285,7 +272,6 @@
   margin: auto;
   text-align: center;
   align-items: center;
-  border: 3px solid yellow;
 }
 .headerright p {
   text-align: center;
