@@ -239,7 +239,7 @@ $font-family-base: Montserrat;
   // border-width: 5px;
   display: flex;
   ul {
-    padding: 1rem;
+    padding: 1.9rem;
     display: flex;
     justify-content: left;
     flex-direction: row;
@@ -261,16 +261,21 @@ $font-family-base: Montserrat;
   display: flex;
   // justify-content: right;
 }
-// .navimg {
-// padding: ;
-// border: #be2d30;
-// border-width: 5px;
-// border-style: solid;
-// }
+.navimg {
+  margin: 20px;
+  margin-left: 10%;
+  justify-content: center;
+
+  align-items: center;
+
+  // border: #be2d30;
+  // border-width: 5px;
+  // border-style: solid;
+}
 .socials {
   display: flex;
   justify-content: right;
-  padding-left: 20%;
+  margin-left: 20%;
 }
 .containerHeader {
   // border: 3px solid #fff;
@@ -281,7 +286,7 @@ $font-family-base: Montserrat;
   flex: 1;
   width: 70%;
   border: 3px green;
-  border-style: groove;
+  // border-style: groove;
 
   ul {
     // border: 3px solid red;
@@ -308,8 +313,8 @@ $font-family-base: Montserrat;
   display: inline-flex;
   // border: 3px solid green;
   width: 30%;
-  text-align: center;
-  align-items: center;
+  // text-align: center;
+  // align-items: center;
   div {
     margin: auto;
     text-align: center;
@@ -416,30 +421,57 @@ $font-family-base: Montserrat;
   margin-bottom: 25px;
 }
 .ourServices {
-  border: red solid 3px;  
+  border: red solid 3px;
+  display:flex;
+  flex-direction: row;
 }
 
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.mainContainer {
+  position: relative;
+  width: 30%;
+  display:flex;
+  flex-direction: row;
+}
+// .imageContainer {
+//   // border: 2px red solid;
+//   // margin: 6% 0 0 36%;
+//   // width: 20%;
+//   // position: relative;
+//   position: relative;
+//   width: 50%; // if it doesnt work, put these 2 lines in .mainContainer
+// }
+.frontImage {
+  display: inline-block;
+  margin: 20%;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color:  rgb(255, 197, 0);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease;
+  display: inline-block;
 
-  .cardImage {
-    border-radius: 20px;
-    // overflow: hidden;
-    // border: 8px solid red;
-    height: 100%;       //might move the div to the left
-    width: 100%; 
-    object-fit: cover;
-    border-radius: 15px;
-  }
-  .cardBody{
-    border: 8px solid green;
-    width: 100%;
-    height: 100%;
-    top : 0;
-    right: 0;
-    position: relative;
-    background: #fff;
-  }
+}
+.mainContainer:hover .overlay {
+  height: 100%;
+  display: inline-block;
+
+}
+.text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  // text-align: center;
+  display: inline-block;
 }
