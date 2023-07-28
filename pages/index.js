@@ -6,7 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import React, { Component } from "react";
 import ReactPlayer from "react-player";
-import MySlider from "@/components/MySlider";
+// import MySlider from "@/components/MySlider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -192,8 +192,38 @@ export default function Home() {
         </div>
 
         <div id="ourServices" className={styles.ourServices}>
-          <span>Our Services</span>
-          lorem1000
+          <div className={styles.title}>Our Services</div>
+          <div>
+            <div className={styles.card}>
+              <div className={styles.cardImage}>
+                <Image src="/group1.jpeg" width={100} height={260} />
+              </div>
+              <div className={styles.cardBody}>
+                here 
+              </div>
+            </div>
+          </div>
+          {/* <div>
+            <div className={styles.card}>
+              <div className={styles.cardImage}>
+                <Image src="/group1.jpeg" width={100} height={260} />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className={styles.card}>
+              <div className={styles.cardImage}>
+                <Image src="/group1.jpeg" width={100} height={260} />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className={styles.card}>
+              <div className={styles.cardImage}>
+                <Image src="/group1.jpeg" width={100} height={260} />
+              </div>
+            </div>
+          </div> */}
         </div>
 
         <div className={styles.floatBox}>
@@ -239,7 +269,7 @@ export default function Home() {
 
         <div>
           <section className={styles.title}>CaterNinja in the News</section>
-          <div><MySlider/></div>    
+          {/* <div><MySlider/></div>     */}
           {/* MySlider component needs to be referred within a div only */}
         </div>
 

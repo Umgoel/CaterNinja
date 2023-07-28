@@ -2,6 +2,8 @@ import React from "react";
 import Card from "./Card";
 import Slider from "react-slick";
 import { settings } from "eslint-config-next";
+
+
 const data = [{ img: "/news.png" }, { img: "/news.png" }, { img: "/news.png" }];
 
 const MySlider = () => {
@@ -11,8 +13,8 @@ const MySlider = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        nextArrow: <nextArrow/>,
-        prevArrow: <prevArrow/>,
+        // nextArrow: <nextArrow/>,
+        // prevArrow: <prevArrow/>,
         responsive:[
             {
                 breakpoint: 1280,
@@ -40,6 +42,7 @@ const MySlider = () => {
         {data.map((el, index) => (
           <Card key={index} img={el.img} />
         ))}
+        
       </Slider>
     </div>
   );
