@@ -4,15 +4,19 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import React from "react";
+import { SimpleSlider } from "@/components/SimpleSlider";
 import ReactPlayer from "react-player";
-// import MySlider from "@/components/MySlider";
+import footer from "@/components/Footer/footer";
+import Footer from "@/components/Footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 //video url https://www.youtube.com/watch?v=o-s9E53Apq8
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -107,11 +111,11 @@ export default function Home() {
                 // showThumbs={false}
                 autoPlay={true}
                 infiniteLoop={true}
-                // interval={2500}
-                // centerMode={true}
-                // showArrows={false}
-                // showStatus={false}
-                // axis="horizontal"
+                interval={2500}
+                centerMode={true}
+                showArrows={false}
+                showStatus={false}
+                axis="horizontal"
               >
                 {/* infiniteLoop interval={2500} centerMode={true} showArrows={false} showStatus={false} */}
                 <div className={styles.carousel}>
@@ -193,15 +197,14 @@ export default function Home() {
           </section>
         </div>
 
+        <div className={styles.title}>
+          <nobr>Our Services</nobr>
+        </div>
         <div id="ourServices" className={styles.ourServices}>
-          <div className={styles.title}>
-            <div><nobr>Our Services</nobr></div>
-          </div>
-
           <div className={styles.mainContainer}>
             <Image
               className={styles.frontImage}
-              src="/frontpic.webp"
+              src="/backpic1.webp"
               width={200}
               height={200}
             />
@@ -210,7 +213,7 @@ export default function Home() {
               {/* for the hidden image */}
               <Image
                 className={styles.text}
-                src="/backpic1.webp"
+                src="/frontpic.webp"
                 width={200}
                 height={200}
               />
@@ -220,7 +223,7 @@ export default function Home() {
           <div className={styles.mainContainer}>
             <Image
               className={styles.frontImage}
-              src="/frontpic.webp"
+              src="/backpic1.webp"
               width={200}
               height={200}
             />
@@ -229,16 +232,17 @@ export default function Home() {
               {/* for the hidden image */}
               <Image
                 className={styles.text}
-                src="/backpic1.webp"
+                src="/frontpic.webp"
                 width={200}
                 height={200}
               />
             </div>
           </div>
+
           <div className={styles.mainContainer}>
             <Image
               className={styles.frontImage}
-              src="/frontpic.webp"
+              src="/backpic1.webp"
               width={200}
               height={200}
             />
@@ -247,7 +251,7 @@ export default function Home() {
               {/* for the hidden image */}
               <Image
                 className={styles.text}
-                src="/backpic1.webp"
+                src="/frontpic.webp"
                 width={200}
                 height={200}
               />
@@ -285,7 +289,7 @@ export default function Home() {
         </div>
 
         <div>Testimonials</div>
-        <div>
+        <div className={styles.howToOrder}>
           <section className={styles.title}>How to Order ? </section>
           <div className={styles.videoPlayer}>
             <ReactPlayer url="https://www.youtube.com/watch?v=o-s9E53Apq8" />
@@ -298,15 +302,14 @@ export default function Home() {
 
         <div>
           <section className={styles.title}>CaterNinja in the News</section>
-          {/* <div><MySlider/></div>     */}
-          {/* MySlider component needs to be referred within a div only */}
+          <SimpleSlider/>
         </div>
 
         <div>
           <section className={styles.title}>Our Categories</section>
         </div>
 
-        <div>Footer</div>
+        {/* <Footer> hi </Footer> */}
       </main>
     </>
   );

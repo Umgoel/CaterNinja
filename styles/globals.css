@@ -60,7 +60,7 @@
 
     --tile-start-rgb: 2, 13, 46;
     --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
+    /* --tile-border: conic-gradient(
       #ffffff80,
       #ffffff40,
       #ffffff30,
@@ -68,7 +68,7 @@
       #ffffff10,
       #ffffff10,
       #ffffff80
-    );
+    ); */
 
     --callout-rgb: 20, 20, 20;
     --callout-border-rgb: 108, 108, 108;
@@ -89,7 +89,7 @@ body {
   overflow-x: hidden;
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -97,7 +97,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
 a {
   color: inherit;
