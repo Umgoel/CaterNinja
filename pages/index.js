@@ -10,13 +10,19 @@ import { SimpleSlider } from "@/components/SimpleSlider";
 import ReactPlayer from "react-player";
 import footer from "@/components/Footer/footer";
 import Footer from "@/components/Footer/footer";
-
+import Selectmultidropdown from "@/components/multiselect";
+import Multiselect from "multiselect-react-dropdown";
 const inter = Inter({ subsets: ["latin"] });
-
+import { useState } from "react";
 //video url https://www.youtube.com/watch?v=o-s9E53Apq8
 
 export default function Home() {
-
+  const [food, setFood] = useState([
+    { cat: "Starters", key: "Achari Paneer Tikka" },
+    { cat: "Starters", key: "Cajun Spice Potato" },
+    { cat: "Starters", key: "Cheesy Triangles" },
+    { cat: "Starters", key: "Dahi Ke Kebab" },
+  ]);
   return (
     <>
       <Head>
@@ -97,7 +103,6 @@ export default function Home() {
             </div>
           </nav>
         </div>
-
         <div className={styles.containerHeader}>
           {/* Carousel-main container header  */}
           <section>
@@ -196,7 +201,17 @@ export default function Home() {
             </div>
           </section>
         </div>
-
+        <div>
+          <Multiselect
+            displayValue="key"
+            // onKeyPressFn={function noRefCheck() {}}
+            onRemove={function noRefCheck() {}}
+            onSearch={function noRefCheck() {}}
+            onSelect={function noRefCheck() {}}
+            options={food}
+            showCheckbox
+          />
+        </div>
         <div className={styles.title}>
           <nobr>Our Services</nobr>
         </div>
@@ -258,7 +273,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
         <div className={styles.floatBox}>
           <a href="">
             <div className={styles.floatItem}>
@@ -281,13 +295,11 @@ export default function Home() {
             Instant Price
           </div>
         </div>
-
         <div className={styles.chatBot}>
           <a href="#ourServices">
             <Image src={"/chat.png"} width={45} height={45} />
           </a>
         </div>
-
         <div>Testimonials</div>
         <div className={styles.howToOrder}>
           <section className={styles.title}>How to Order ? </section>
@@ -295,20 +307,16 @@ export default function Home() {
             <ReactPlayer url="https://www.youtube.com/watch?v=o-s9E53Apq8" />
           </div>
         </div>
-
         <div>
           <section className={styles.title}>How it Works</section>
         </div>
-
         <div>
           <section className={styles.title}>CaterNinja in the News</section>
-          <SimpleSlider/>
+          <SimpleSlider />
         </div>
-
         <div>
           <section className={styles.title}>Our Categories</section>
         </div>
-
         {/* <Footer> hi </Footer> */}
       </main>
     </>
