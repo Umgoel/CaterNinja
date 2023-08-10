@@ -10,19 +10,35 @@ import { SimpleSlider } from "@/components/SimpleSlider";
 import ReactPlayer from "react-player";
 import footer from "@/components/Footer/footer";
 import Footer from "@/components/Footer/footer";
-import Selectmultidropdown from "@/components/multiselect";
 import Multiselect from "multiselect-react-dropdown";
 const inter = Inter({ subsets: ["latin"] });
 import { useState } from "react";
 //video url https://www.youtube.com/watch?v=o-s9E53Apq8
+import { multiselect } from "@/components/Multiselect";
 
 export default function Home() {
-  const [food, setFood] = useState([
+  const starter_options = [
     { cat: "Starters", key: "Achari Paneer Tikka" },
     { cat: "Starters", key: "Cajun Spice Potato" },
     { cat: "Starters", key: "Cheesy Triangles" },
     { cat: "Starters", key: "Dahi Ke Kebab" },
-  ]);
+  ];
+
+  const [food, setFood] = useState(starter_options);
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const onSelectHandler = (selectedList, selectedItem) => {
+    setSelectedOptions(selectedList);
+  };
+
+  const updateCounter = (key, newCounter) => {
+    setSelectedOptions((prevSelected) =>
+      prevSelected.map((item) =>
+        item.key === key ? { ...item, counter: newCounter } : item
+      )
+    );
+  };
+
   return (
     <>
       <Head>
@@ -201,15 +217,34 @@ export default function Home() {
             </div>
           </section>
         </div>
+
         <div>
+          <div>
+            <h3>Selected Options:</h3>
+            <ul>
+              {selectedOptions.map((option) => (
+                <li key={option.key}>
+                  {option.key} - Qty:{" "}
+                  <input
+                    type="number"
+                    value={option.counter || 1}
+                    onChange={(e) =>
+                      updateCounter(option.key, parseInt(e.target.value, 10))
+                    }
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
           <Multiselect
             displayValue="key"
-            // onKeyPressFn={function noRefCheck() {}}
+            onKeyPressFn={function noRefCheck() {}}
             onRemove={function noRefCheck() {}}
             onSearch={function noRefCheck() {}}
-            onSelect={function noRefCheck() {}}
+            onSelect={onSelectHandler}
             options={food}
             showCheckbox
+            selectedValues={selectedOptions} // Pass the selectedOptions to display checked options
           />
         </div>
         <div className={styles.title}>
