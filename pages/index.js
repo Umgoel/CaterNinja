@@ -28,7 +28,15 @@ export default function Home() {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const onSelectHandler = (selectedList, selectedItem) => {
-    setSelectedOptions(selectedList);
+    const updatedSelectedOptions = selectedList.map((option) => {
+      const existingOption = selectedOptions.find((item) => item.key === option.key);
+      if (existingOption) {
+        return { ...existingOption, isSelected: true };
+      }
+      return { ...option, isSelected: true, counter: 1 };
+    });
+
+    setSelectedOptions(updatedSelectedOptions);
   };
 
   const updateCounter = (key, newCounter) => {
@@ -219,24 +227,7 @@ export default function Home() {
         </div>
 
         <div>
-          <div>
-            <h3>Selected Options:</h3>
-            <ul>
-              {selectedOptions.map((option) => (
-                <li key={option.key}>
-                  {option.key} - Qty:{" "}
-                  <input
-                    type="number"
-                    value={option.counter || 1}
-                    onChange={(e) =>
-                      updateCounter(option.key, parseInt(e.target.value, 10))
-                    }
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-          <Multiselect
+        <Multiselect
             displayValue="key"
             onKeyPressFn={function noRefCheck() {}}
             onRemove={function noRefCheck() {}}
@@ -246,6 +237,29 @@ export default function Home() {
             showCheckbox
             selectedValues={selectedOptions} // Pass the selectedOptions to display checked options
           />
+          <div>
+            <h3>Selected Options:</h3>
+            <ul>
+          {selectedOptions.map((option) => (
+            <li key={option.key}>
+              {option.key}
+              {option.isSelected && ( // Only render counter if the item is selected
+                <>
+                  {" - Qty  :  "}
+                  <input
+                    type="number"
+                    value={option.counter || 1}
+                    onChange={(e) =>
+                      updateCounter(option.key, parseInt(e.target.value, 10))
+                    }
+                  />
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+          </div>
+          
         </div>
         <div className={styles.title}>
           <nobr>Our Services</nobr>
