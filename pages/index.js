@@ -9,12 +9,12 @@ import React from "react";
 import { SimpleSlider } from "@/components/SimpleSlider";
 import ReactPlayer from "react-player";
 import footer from "@/components/Footer/footer";
-import Footer from "@/components/Footer/footer";
 import Multiselect from "multiselect-react-dropdown";
 const inter = Inter({ subsets: ["latin"] });
 import { useState } from "react";
 //video url https://www.youtube.com/watch?v=o-s9E53Apq8
-import { multiselect } from "@/components/Multiselect";
+import Navbar from "@/components/Navbar";
+import dropDown from "@/components/dropDown";
 
 export default function Home() {
   const starter_options = [
@@ -74,66 +74,7 @@ export default function Home() {
         />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.navcont}>
-          <nav className={styles.mainnav}>
-            <ul>
-              <li>
-                <span className={styles.mainnav}>Home</span>
-              </li>
-              <li>
-                <span className={styles.mainnav}>Ninja&nbsp;</span>Box
-              </li>
-              {/*style="color:#BE2D30"*/}
-              <li>
-                <span className={styles.mainnav}>Ninja&nbsp;</span>Buffet
-              </li>
-              <li>
-                <span className={styles.mainnav}>Meal&nbsp;</span>Box
-              </li>
-              <li>
-                <nobr>About Us</nobr>
-              </li>
-              <li>Blog</li>
-            </ul>
-            <Image
-              className={styles.navimg}
-              src="/caterninja.webp"
-              alt="CaterNinja.com Logo"
-              width={200}
-              height={45}
-              priority
-            />
-            <div className={styles.socials}>
-              <ul>
-                <li>
-                  {" "}
-                  <a
-                    target="_blank"
-                    href="https://www.instagram.com/caterninja/"
-                  >
-                    <Image src="/insta.png" width={30} height={30} />{" "}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    href="https://www.facebook.com/CaterNinja/"
-                  >
-                    <Image src="/facebook.png" width={30} height={30} />
-                  </a>
-                </li>
-                <li style={{ marginBottom: 20 }}>
-                  <a
-                    target="_blank"
-                    href="https://www.youtube.com/channel/UC_lMKzsQnJ6R2LaIR49fvSA"
-                  >
-                    <Image src="/youtube.webp" width={40} height={40} />{" "}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <Navbar />
         <div className={styles.containerHeader}>
           {/* Carousel-main container header  */}
           <section>
@@ -245,35 +186,33 @@ export default function Home() {
             showCheckbox
             selectedValues={selectedOptions} // Passing the selectedOptions to display checked options
           />
-          <div>
-            <ul>
-              <h3>Selected Options:</h3>
-              {selectedOptions.map((option) => (
-                <li key={option.key}>
-                  {option.key}
-                  {option.isSelected && ( // Only render counter if the item is selected
-                    <>
-                      {" - Qty  :  "}
-                      <input
-                        type="number"
-                        value={option.counter || 1}
-                        onChange={(e) =>
-                          updateCounter(
-                            option.key,
-                            parseInt(e.target.value, 10)
-                          )
-                        }
-                      />
-                    </>
-                  )}
-                  <button onClick={() => onDeleteHandler(option.key)}>Delete</button>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
-
-
+        <div>
+          <ul>
+            <h3>Selected Options:</h3>
+            {selectedOptions.map((option) => (
+              <li key={option.key}>
+                {option.key}
+                {option.isSelected && ( // Only render counter if the item is selected
+                  <>
+                    {" - Qty  :  "}
+                    <input
+                      type="number"
+                      value={option.counter || 1}
+                      onChange={(e) =>
+                        updateCounter(option.key, parseInt(e.target.value, 10))
+                      }
+                    />
+                  </>
+                )}
+                <button onClick={() => onDeleteHandler(option.key)}>
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <dropDown />
         <div className={styles.title}>
           <nobr>Our Services</nobr>
         </div>
@@ -380,6 +319,7 @@ export default function Home() {
           <section className={styles.title}>Our Categories</section>
         </div>
         {/* <Footer> hi </Footer> */}
+        
       </main>
     </>
   );
