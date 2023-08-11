@@ -29,7 +29,9 @@ export default function Home() {
 
   const onSelectHandler = (selectedList, selectedItem) => {
     const updatedSelectedOptions = selectedList.map((option) => {
-      const existingOption = selectedOptions.find((item) => item.key === option.key);
+      const existingOption = selectedOptions.find(
+        (item) => item.key === option.key
+      );
       if (existingOption) {
         return { ...existingOption, isSelected: true };
       }
@@ -44,6 +46,11 @@ export default function Home() {
       prevSelected.map((item) =>
         item.key === key ? { ...item, counter: newCounter } : item
       )
+    );
+  };
+  const onDeleteHandler = (key) => {
+    setSelectedOptions((prevSelected) =>
+      prevSelected.filter((item) => item.key !== key)
     );
   };
 
@@ -227,40 +234,46 @@ export default function Home() {
         </div>
 
         <div>
-        <Multiselect
+          <Multiselect
             displayValue="key"
+            hideSelectedList
             onKeyPressFn={function noRefCheck() {}}
             onRemove={function noRefCheck() {}}
             onSearch={function noRefCheck() {}}
             onSelect={onSelectHandler}
             options={food}
             showCheckbox
-            selectedValues={selectedOptions} // Pass the selectedOptions to display checked options
+            selectedValues={selectedOptions} // Passing the selectedOptions to display checked options
           />
           <div>
-            <h3>Selected Options:</h3>
             <ul>
-          {selectedOptions.map((option) => (
-            <li key={option.key}>
-              {option.key}
-              {option.isSelected && ( // Only render counter if the item is selected
-                <>
-                  {" - Qty  :  "}
-                  <input
-                    type="number"
-                    value={option.counter || 1}
-                    onChange={(e) =>
-                      updateCounter(option.key, parseInt(e.target.value, 10))
-                    }
-                  />
-                </>
-              )}
-            </li>
-          ))}
-        </ul>
+              <h3>Selected Options:</h3>
+              {selectedOptions.map((option) => (
+                <li key={option.key}>
+                  {option.key}
+                  {option.isSelected && ( // Only render counter if the item is selected
+                    <>
+                      {" - Qty  :  "}
+                      <input
+                        type="number"
+                        value={option.counter || 1}
+                        onChange={(e) =>
+                          updateCounter(
+                            option.key,
+                            parseInt(e.target.value, 10)
+                          )
+                        }
+                      />
+                    </>
+                  )}
+                  <button onClick={() => onDeleteHandler(option.key)}>Delete</button>
+                </li>
+              ))}
+            </ul>
           </div>
-          
         </div>
+
+
         <div className={styles.title}>
           <nobr>Our Services</nobr>
         </div>
