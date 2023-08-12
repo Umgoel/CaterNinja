@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+.main {
+  min-height: 100vh;
+}
+
+.multidropdownbox {
+  margin: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: Montserrat;
+}
+
+.ordersText {
+  font-family: Montserrat;
+}
+.ordersText .deleteIcon {
+  display: inline-block;
+  background: #fff;
+  border: 1px;
+  position: relative;
+  left: 20px;
+}
+
+.ordersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ordersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.selectedOptionsHeading {
+  text-align: center;
+}
+
+.optionListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.optionName {
+  flex: 1;
+}
+
+.quantityLabel {
+  margin-right: 8px;
+}
+
+.quantityInput {
+  width: 40px;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}/*# sourceMappingURL=dropdown.css.map */

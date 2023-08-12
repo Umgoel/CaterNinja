@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+$font-family-base: Montserrat;
+.main {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
+  // padding: 6rem;
+  min-height: 100vh;
+}
+.container {
+  // display: flex;
+  justify-content: center; //horizontal
+  align-items: center; // vertically
+  height: 100vh; 
+}
+
+.multidropdownbox {
+  // width: 50%;
+  display: flex;
+  justify-content: center; //horizontally
+  // left: 50%;
+  // align-items: center; //vertically
+}
+
+.ordersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .ordersList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .selectedOptionsHeading {
+      text-align: center;
+    }
+
+    .optionListItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+
+      .optionName {
+        flex: 1;
+      }
+
+      .quantityLabel {
+        margin-right: 8px;
+      }
+
+      .quantityInput {
+        width: 40px;
+      }
+
+      .deleteButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "@/styles/Home.module.scss";
+import styles from "@/styles/dropdown.module.scss";
 import Multiselect from "multiselect-react-dropdown";
 import { useState } from "react";
+import Image from "next/image";
 
 const DropDown = () => {
   const starter_options = [
@@ -9,6 +10,11 @@ const DropDown = () => {
     { cat: "Starters", key: "Cajun Spice Potato" },
     { cat: "Starters", key: "Cheesy Triangles" },
     { cat: "Starters", key: "Dahi Ke Kebab" },
+    { cat: "Starters", key: "Paneer 65" },
+    { cat: "Starters", key: "Honey Chilli Potato" },
+    { cat: "Starters", key: "Cheesy Bombs" },
+    { cat: "Starters", key: "Hare Bhare Kebab" },
+    { cat: "Starters", key: "Paneer Tikka" },
   ];
 
   const [food, setFood] = useState(starter_options);
@@ -42,7 +48,8 @@ const DropDown = () => {
   };
   return (
     <>
-      <div>
+      <div className={styles.container}>
+      <div className={styles.multidropdownbox}>
         <Multiselect
           displayValue="key"
           hideSelectedList
@@ -55,16 +62,17 @@ const DropDown = () => {
           selectedValues={selectedOptions} // Passing the selectedOptions to display checked options
         />
       </div>
-      <div>
-        <ul>
-          <h3>Selected Options:</h3>
+      <div className={styles.ordersContainer}>
+        <ul className={styles.ordersList}>
+          <h3 className={styles.selectedOptionsHeading}>Selected Options:</h3>
           {selectedOptions.map((option) => (
-            <li key={option.key}>
-              {option.key}
-              {option.isSelected && ( // Only render counter if the item is selected
+            <li key={option.key} className={styles.optionListItem}>
+              <span className={styles.optionName}>{option.key}</span>
+              {option.isSelected && (
                 <>
-                  {" - Qty  :  "}
+                  {/* <span className={styles.quantityLabel}>Qty:</span> */}
                   <input
+                    className={styles.quantityInput}
                     type="number"
                     value={option.counter || 1}
                     onChange={(e) =>
@@ -73,12 +81,16 @@ const DropDown = () => {
                   />
                 </>
               )}
-              <button onClick={() => onDeleteHandler(option.key)}>
-                Delete
+              <button
+                className={styles.deleteButton}
+                onClick={() => onDeleteHandler(option.key)}
+              >
+                <Image src={"/delete.png"} width={30} height={30} />
               </button>
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </>
   );
