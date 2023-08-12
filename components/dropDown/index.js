@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "@/styles/Home.module.scss";
 import Multiselect from "multiselect-react-dropdown";
-// const inter = Inter({ subsets: ["latin"] });
 import { useState } from "react";
 
-const dropDown = () => {
+const DropDown = () => {
   const starter_options = [
     { cat: "Starters", key: "Achari Paneer Tikka" },
     { cat: "Starters", key: "Cajun Spice Potato" },
@@ -85,4 +84,4 @@ const dropDown = () => {
   );
 };
 
-export default dropDown;
+export default DropDown;

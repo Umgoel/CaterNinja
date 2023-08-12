@@ -14,7 +14,9 @@ const inter = Inter({ subsets: ["latin"] });
 import { useState } from "react";
 //video url https://www.youtube.com/watch?v=o-s9E53Apq8
 import Navbar from "@/components/Navbar";
-import dropDown from "@/components/dropDown";
+import DropDown from "@/components/DropDown";
+import Link from "next/link";
+
 
 export default function Home() {
   const starter_options = [
@@ -174,45 +176,7 @@ export default function Home() {
           </section>
         </div>
 
-        <div>
-          <Multiselect
-            displayValue="key"
-            hideSelectedList
-            onKeyPressFn={function noRefCheck() {}}
-            onRemove={function noRefCheck() {}}
-            onSearch={function noRefCheck() {}}
-            onSelect={onSelectHandler}
-            options={food}
-            showCheckbox
-            selectedValues={selectedOptions} // Passing the selectedOptions to display checked options
-          />
-        </div>
-        <div>
-          <ul>
-            <h3>Selected Options:</h3>
-            {selectedOptions.map((option) => (
-              <li key={option.key}>
-                {option.key}
-                {option.isSelected && ( // Only render counter if the item is selected
-                  <>
-                    {" - Qty  :  "}
-                    <input
-                      type="number"
-                      value={option.counter || 1}
-                      onChange={(e) =>
-                        updateCounter(option.key, parseInt(e.target.value, 10))
-                      }
-                    />
-                  </>
-                )}
-                <button onClick={() => onDeleteHandler(option.key)}>
-                  Delete
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <dropDown />
+        <DropDown />
         <div className={styles.title}>
           <nobr>Our Services</nobr>
         </div>
@@ -275,11 +239,11 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.floatBox}>
-          <a href="">
+          <Link href="">
             <div className={styles.floatItem}>
               <span>Call a Ninja</span> <br /> Instant Order
             </div>
-          </a>
+          </Link>
           <div>
             <Image
               className={styles.floatImage}
@@ -319,7 +283,6 @@ export default function Home() {
           <section className={styles.title}>Our Categories</section>
         </div>
         {/* <Footer> hi </Footer> */}
-        
       </main>
     </>
   );
