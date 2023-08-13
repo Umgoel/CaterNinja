@@ -12,7 +12,7 @@ $font-family-base: Montserrat;
   // display: flex;
   justify-content: center; //horizontal
   align-items: center; // vertically
-  height: 100vh; 
+  height: 100vh;
 }
 
 .multidropdownbox {
@@ -62,4 +62,38 @@ $font-family-base: Montserrat;
       }
     }
   }
+}
+
+.filterContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+  }
+}
+
+.closeButton {
+  margin: 20px auto;
+  padding: 5px ;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    background-color: darkred;
+  }
+
 }
