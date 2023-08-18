@@ -1,0 +1,64 @@
+// styles/profilePage.module.scss
+
+.profilePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  
+    .profilePicture {
+      margin-bottom: 1rem;
+  
+      img {
+        max-width: 100px;
+        border-radius: 50%;
+      }
+    }
+  
+    .profileInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+  
+      .textFields {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+  
+        input {
+          width: 100%;
+          padding: 0.5rem;
+          margin-bottom: 0.5rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+  
+      .logoutBtn {
+        background-color: #be2d30;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #991f24;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .profilePage {
+        padding: 1rem;
+      }
+    }
+  }
+  

@@ -60,7 +60,7 @@ const NavbarComponent = () => {
           {isDropdownOpen && (
           <div className={styles.dropdownMenu}>
               <li>
-                <Link href="../profilePage">My Profile</Link>
+                <Link href="../myProfile">My Profile</Link>
               </li>
               <li>
                 <Link href="../profilePage">My Orders</Link>

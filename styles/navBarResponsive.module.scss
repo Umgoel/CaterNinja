@@ -41,10 +41,6 @@
 .navimg {
   margin: 10% 35%;
   display: flex;
-  // justify-content: center; //horizontal
-  // align-items: center; // vertically
-
-  //   flex-direction: row;
 }
 .profileIcon {
   display: flex;
@@ -59,40 +55,41 @@
   cursor: pointer;
 }
 .dropdownMenu {
-  // display: none;
-
   position: absolute;
   right: 10rem;
   top: 85px;
   width: 200px;
   backdrop-filter: blur(100px);
-  // border: solid 2px red ;
-  // height: 0;
   border-radius: 5px;
   overflow: hidden;
   transition: height 0.3s ease;
-li{
-  padding: .7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  li {
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-}
-.open {
-  display: block; // Show the dropdown menu when the "open" class is applied
-  height: auto; // Set the desired height when open
-}
-.dropdownMenu.open{
-  height: 240px;
-}
-
-
 
 @media (max-width: 768px) {
   .mainnav li {
     display: none;
   }
-  .dropdownMenu{
+  .dropdownMenu {
     display: block;
+    position: absolute;
+    right: 10rem;
+    top: 85px;
+    width: 200px;
+    backdrop-filter: blur(100px);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    li {
+      padding: 0.7rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
