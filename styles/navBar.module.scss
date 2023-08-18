@@ -1,0 +1,90 @@
+@mixin redSpan {
+  color: #be2d30;
+}
+.mainnav {
+  filter: drop-shadow(0 4.63171px 9.26343px rgba(0, 0, 0, 0.25));
+  // border: #be2d30;
+  // border-width: 5px;
+  white-space: nowrap;
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  //   padding: 10px 20px;
+
+  ul {
+    padding: 1.9rem;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+  }
+  li {
+    display: flex;
+    margin: 0 10px;
+    list-style: none;
+    justify-content: left;
+    @media (max-width: 768px) {
+      margin: 5px 0;
+    }
+  }
+  span {
+    @include redSpan();
+    @media (max-width: 768px) {
+        display: none; // Hide menu labels
+      }
+  }
+}
+.navcont {
+  // border: #be2d30;
+  // border-width: 5px;
+  // border-style: solid;
+  display: flex;
+  // position: fixed;
+  // top:0;
+  // margin-bottom: 50px;
+  // padding-bottom: 100px;
+  z-index: 999;
+  // justify-content: right;
+  background-color: #ffffff;
+  padding: 10px;
+}
+.navimg {
+  margin: 20px;
+  margin-left: 10%;
+  justify-content: center;
+
+  align-items: center;
+
+  // border: #be2d30;
+  // border-width: 5px;
+  // border-style: solid;
+}
+.socials {
+  display: flex;
+  justify-content: right;
+  margin-left: 20%;
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-right: 10px;
+
+      // Style for mobile screens
+      @media (max-width: 768px) {
+        margin-right: 50px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #333;
+
+        img {
+          display: block;
+        }
+      }
+    }
+  }
+}

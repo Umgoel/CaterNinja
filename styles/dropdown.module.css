@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+.main {
+  min-height: 100vh;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.multidropdownbox {
+  display: flex;
+  justify-content: center;
+}
+
+.ordersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ordersContainer .ordersList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ordersContainer .ordersList .selectedOptionsHeading {
+  text-align: center;
+}
+.ordersContainer .ordersList .optionListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.ordersContainer .ordersList .optionListItem .optionName {
+  flex: 1;
+}
+.ordersContainer .ordersList .optionListItem .quantityLabel {
+  margin-right: 8px;
+}
+.ordersContainer .ordersList .optionListItem .quantityInput {
+  width: 40px;
+}
+.ordersContainer .ordersList .optionListItem .deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.filterContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.filterContainer label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.filterContainer label input[type=radio] {
+  margin-right: 5px;
+}
+
+.closeButton {
+  margin: 20px auto;
+  padding: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+.closeButton:hover {
+  background-color: darkred;
+}/*# sourceMappingURL=dropdown.module.css.map */

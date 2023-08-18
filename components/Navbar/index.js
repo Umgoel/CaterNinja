@@ -1,6 +1,5 @@
 import React from "react";
-import styles from "@/styles/Home.module.scss";
-import Head from "next/head";
+import styles from "@/styles/navBar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,7 +24,7 @@ const Navbar = () => {
                 Box&nbsp;
               </li>
               <li>
-                <span className={styles.mainnav}>Ninja&nbsp;</span>Buffet
+                <span className={styles.mainnav}><Link href="../profilePage">Ninja&nbsp;</Link></span>Buffet
               </li>
               <li>
                 <span className={styles.mainnav}>Meal&nbsp;</span>Box
@@ -75,6 +74,7 @@ const Navbar = () => {
           </nav>
         </div>
       </main>
+      
     </>
   );
 };

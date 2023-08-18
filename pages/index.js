@@ -17,7 +17,6 @@ import Navbar from "@/components/Navbar";
 import DropDown from "@/components/DropDown";
 import Link from "next/link";
 
-
 export default function Home() {
   const starter_options = [
     { cat: "Starters", key: "Achari Paneer Tikka" },
@@ -175,8 +174,6 @@ export default function Home() {
             </div>
           </section>
         </div>
-
-        <DropDown />
         <div className={styles.title}>
           <nobr>Our Services</nobr>
         </div>

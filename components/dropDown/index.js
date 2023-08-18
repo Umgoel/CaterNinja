@@ -17,7 +17,6 @@ const DropDown = () => {
     { cat: "Non-Veg", key: "Chicken Kebab" },
     { cat: "Non-Veg", key: "Chicken Tikka" },
   ];
-
   const [food, setFood] = useState(starter_options);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [filterValue, setFilterValue] = useState("All");
@@ -66,9 +65,10 @@ const DropDown = () => {
       setFood(filteredFood);
     }
   };
-  const filteredOptions = filterValue === "All" ?
-    starter_options :
-    starter_options.filter(option => option.cat === filterValue);
+  const filteredOptions =
+    filterValue === "All"
+      ? starter_options
+      : starter_options.filter((option) => option.cat === filterValue);
 
   return (
     <>
@@ -83,7 +83,7 @@ const DropDown = () => {
             />
             All
           </label> */}
-          <label style={{color:"green"}}>
+          <label style={{ color: "green" }}>
             <input
               type="radio"
               value="Veg"
@@ -92,7 +92,7 @@ const DropDown = () => {
             />
             Veg
           </label>
-          <label style={{color:"red"}}>
+          <label style={{ color: "red" }}>
             <input
               type="radio"
               value="Non-Veg"
@@ -103,50 +103,55 @@ const DropDown = () => {
           </label>
         </div>
         {isDropdownOpen && (
-        <div className={styles.multidropdownbox}>
-          <Multiselect
-            displayValue="key"
-            hideSelectedList
-            onKeyPressFn={function noRefCheck() {}}
-            onRemove={function noRefCheck() {}}
-            onSearch={function noRefCheck() {}}
-            onSelect={onSelectHandler}
-            options={food}
-            showCheckbox
-            selectedValues={selectedOptions} // Passing the selectedOptions to display checked options
-          />
-        </div>
+          <div className={styles.multidropdownbox}>
+            <Multiselect
+              displayValue="key"
+              hideSelectedList
+              onKeyPressFn={function noRefCheck() {}}
+              onRemove={function noRefCheck() {}}
+              onSearch={function noRefCheck() {}}
+              onSelect={onSelectHandler}
+              options={food}
+              showCheckbox
+              selectedValues={selectedOptions} // Passing the selectedOptions to display checked options
+            />
+          </div>
         )}
-         {isDropdownOpen && (
-        <div className={styles.ordersContainer}>
-          <ul className={styles.ordersList}>
-            <h3 className={styles.selectedOptionsHeading}>Selected Options:</h3>
-            {selectedOptions.map((option) => (
-              <li key={option.key} className={styles.optionListItem}>
-                <span className={styles.optionName}>{option.key}</span>
-                {option.isSelected && (
-                  <>
-                    {/* <span className={styles.quantityLabel}>Qty:</span> */}
-                    <input
-                      className={styles.quantityInput}
-                      type="number"
-                      value={option.counter || 1}
-                      onChange={(e) =>
-                        updateCounter(option.key, parseInt(e.target.value, 10))
-                      }
-                    />
-                  </>
-                )}
-                <button
-                  className={styles.deleteButton}
-                  onClick={() => onDeleteHandler(option.key)}
-                >
-                  <Image src={"/delete.png"} width={30} height={30} />
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {isDropdownOpen && (
+          <div className={styles.ordersContainer}>
+            <ul className={styles.ordersList}>
+              <h3 className={styles.selectedOptionsHeading}>
+                Selected Options:
+              </h3>
+              {selectedOptions.map((option) => (
+                <li key={option.key} className={styles.optionListItem}>
+                  <span className={styles.optionName}>{option.key}</span>
+                  {option.isSelected && (
+                    <>
+                      {/* <span className={styles.quantityLabel}>Qty:</span> */}
+                      <input
+                        className={styles.quantityInput}
+                        type="number"
+                        value={option.counter || 1}
+                        onChange={(e) =>
+                          updateCounter(
+                            option.key,
+                            parseInt(e.target.value, 10)
+                          )
+                        }
+                      />
+                    </>
+                  )}
+                  <button
+                    className={styles.deleteButton}
+                    onClick={() => onDeleteHandler(option.key)}
+                  >
+                    <Image src={"/delete.png"} width={30} height={30} />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
         <button className={styles.closeButton} onClick={toggleDropdown}>
           Done
