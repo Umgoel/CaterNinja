@@ -1,11 +1,16 @@
-import NavbarResponsive from "@/components/Navbar-responsive";
+import NavbarResponsive from "../components/Navbar-responsive";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import React from "react";
-import styles from "@/styles/profilePage.module.scss";
+import styles from "../styles/profilePage.module.scss";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
+
+
+ 
+//re_UvJ1UuVw_9eyuFbH24fDrxbcbiiaXHn8U
 export default function Home() {
   const fullName = "Umang Goel";
   const address = "Bengaluru";

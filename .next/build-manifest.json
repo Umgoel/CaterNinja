@@ -22,15 +22,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/myProfile": [
+    "/mail": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/myProfile.js"
-    ],
-    "/profilePage": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/profilePage.js"
+      "static/chunks/pages/mail.js"
     ]
   },
   "ampFirstPages": []
