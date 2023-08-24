@@ -22,10 +22,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/mail": [
+    "/submissionForm": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/mail.js"
+      "static/chunks/pages/submissionForm.js"
     ]
   },
   "ampFirstPages": []

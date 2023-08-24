@@ -2,5 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/mail": "pages/mail.js"
+  "/submissionForm": "pages/submissionForm.js",
+  "/api/submitForm/route": "pages/api/submitForm/route.js"
 }

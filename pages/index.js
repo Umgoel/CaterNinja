@@ -1,20 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.scss";
+import styles from "../styles/Home.module.scss";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import React, { Component } from "react";
 import React from "react";
-import { SimpleSlider } from "@/components/SimpleSlider";
+import { SimpleSlider } from "../components/SimpleSlider";
 import ReactPlayer from "react-player";
-import footer from "@/components/Footer/footer";
+// import footer from "@/components/Footer/footer";
 import Multiselect from "multiselect-react-dropdown";
 const inter = Inter({ subsets: ["latin"] });
 import { useState } from "react";
 //video url https://www.youtube.com/watch?v=o-s9E53Apq8
-import Navbar from "@/components/Navbar";
-import DropDown from "@/components/DropDown";
+import Navbar from "../components/Navbar";
+// import DropDown from "@/components/DropDown";
 import Link from "next/link";
 
 export default function Home() {
